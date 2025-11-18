@@ -126,7 +126,6 @@
     <h1>COLEGIO DE MONTALBAN</h1>
     <p><strong>CDM Portal</strong></p>
 
-    <!-- LOGIN FORM -->
     <form id="loginForm">
       <label for="role">Select Role</label>
       <select id="role" name="role" required>
@@ -158,7 +157,6 @@
   <script>
     const formContainer = document.querySelector('.form-container');
 
-    // Toggle between Login and Register forms
     document.getElementById('switchToRegister').addEventListener('click', (e) => {
       e.preventDefault();
       formContainer.innerHTML = `
@@ -190,13 +188,11 @@
           Already have an account? <a href="#" id="switchToLogin">Login</a>
         </p>
       `;
-
-      // Reattach login switch handler
+      
       document.getElementById('switchToLogin').addEventListener('click', () => location.reload());
       attachRegisterHandler();
     });
 
-    // Redirect users based on role when logging in
     document.getElementById('loginForm').addEventListener('submit', function(e) {
       e.preventDefault();
       const role = document.getElementById('role').value;
@@ -219,16 +215,16 @@
       }
     });
 
-    // Simple registration handler
     function attachRegisterHandler() {
       document.getElementById('registerForm').addEventListener('submit', function(e) {
         e.preventDefault();
         alert('Registration successful! You can now log in.');
-        location.reload(); // Return to login page
+        location.reload();
       });
     }
   </script>
 
 </body>
 </html>
+
 
